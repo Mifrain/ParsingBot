@@ -1,0 +1,9 @@
+services:
+  bot:
+    build: .
+    container_name: parsing_bot
+    restart: unless-stopped
+    command: >
+      bash -c "
+        python3 -m bot.main
+      "
