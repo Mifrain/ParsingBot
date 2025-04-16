@@ -55,6 +55,7 @@ async def get_summarize():
 
 
     for site in all_prices:
+        if site[1] < 1: continue
         title = site[0].strip()
         price = site[1]
         grouped_prices[title].append(price)

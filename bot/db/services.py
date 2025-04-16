@@ -15,7 +15,7 @@ class SiteService:
             title=site.title,
             url=site.url,
             xpath=site.xpath,
-            price=None
+            price=0.0
         )
         db.add(db_site)
         db.commit()
@@ -23,7 +23,7 @@ class SiteService:
 
     @staticmethod
     def get_sites_without_price():
-        query = select(Site).filter_by(price = None)
+        query = select(Site).filter_by(price = 0.0)
         result = db.execute(query)
         return result.fetchall()
 

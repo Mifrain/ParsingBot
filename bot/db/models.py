@@ -10,7 +10,7 @@ class Site(Base):
     title = Column(String, nullable=False)
     url = Column(String, nullable=False)
     xpath = Column(String, nullable=False)
-    price = Column(Float, default=None, nullable=True)
+    price = Column(Float, default=None, nullable=False)
 
 
 Base.metadata.create_all(bind=engine)

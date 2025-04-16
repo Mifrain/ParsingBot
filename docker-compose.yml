@@ -3,6 +3,10 @@ services:
     build: .
     container_name: parsing_bot
     restart: unless-stopped
+    volumes:
+      - .:/app
+    environment:
+      - DB_URL=sqlite:///sites.db
     command: >
       bash -c "
         python3 -m bot.main
